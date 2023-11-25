@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio Karol Lima</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f5f5f5; /* Fundo suave */
+        }
+
+        #navbar-container {
+            width: 100%;
+            background-color: #333; /* Cor de fundo do navbar */
+            padding: 10px 0;
+            color: #fff; /* Cor do texto do navbar */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        #navbar-container a {
+            color: #fff; /* Cor do texto dos links do navbar */
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column; /* Agora é uma coluna, para centralizar "Seja bem-vindo!" */
+            align-items: center;
+            max-width: 800px; /* Largura máxima do conteúdo principal */
+            text-align: center;
+            padding: 20px;
+            margin-top: 20px;
+            background-color: #fff; /* Fundo branco para destacar o conteúdo */
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+        }
+
+        .text-section {
+            flex: 1; /* Ocupa todo o espaço disponível */
+            text-align: center;
+            width: 100%;
+            max-width: 600px; /* Largura máxima do texto */
+            margin-bottom: 20px; /* Espaço abaixo do texto */
+        }
+
+        .text-section h1 {
+            font-size: 2.5em; /* Tamanho grande para "Seja bem-vindo!" */
+            margin: 0;
+            margin-bottom: 10px; /* Espaço abaixo do título */
+        }
+
+        .text-section div {
+            margin-bottom: 20px; /* Espaço abaixo do bloco de subtítulos */
+        }
+
+        .text-section h2,
+        .text-section h3 {
+            margin: 0;
+        }
+
+        .image-section {
+            flex-shrink: 0; /* Não diminui de tamanho */
+            width: 200px; /* Largura da imagem */
+            border-radius: 50%; /* Torna a imagem redonda */
+            overflow: hidden; /* Garante que a borda redonda seja aplicada corretamente */
+            margin-top: 20px;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: auto; /* Empurra o footer para o final da página */
+            padding: 10px;
+            background-color: #333; /* Cor de fundo do footer */
+            color: #fff; /* Cor do texto do footer */
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div id="navbar-container">
+        <div>
+            <span>Karol Lima</span>
+        </div>
+        <nav>
+            <a href="{{url_for('index')}}">Home</a>
+            <a href="{{url_for('projetos')}}">Projetos</a>
+            <a href="{{url_for('contatos')}}">Contatos</a>
+        </nav>
+    </div>
+
+    <main>
+        <div class="text-section">
+            <h1>Seja bem-vindo!</h1>
+            <div>
+                <h2>Karol Lima</h2>
+                <h3>Desenvolvedora Web em Aprendizado Autodidata</h3>
+            </div>
+            <p>
+                Aberta a freelancer, estudo desenvolvimento web e crio projetos tanto em Python como Javascript, utilizando os respectivos frameworks Flask e React e com a utilização de banco de dados como o MySQL.
+            </p>
+        </div>
+        <div class="image-section">
+            <img src="{{ url_for('static', filename='karol.jpeg') }}" alt="Karol Lima" style="width: 200px; height: 200px; object-fit: cover; border-radius: 50%;">
+        </div>
+    </main>
+
+    <footer>
+        <p>Copyright © 2023 Karol Lima</p>
+    </footer>
+
+</body>
+</html>
